@@ -16,8 +16,10 @@ import { DomRef } from './components/refs/DomRef'
 import { MutableRef } from './components/refs/MutableRef'
 import { Counter } from './components/class/Counter'
 import { List } from './components/generics/List'
-  
-
+import { RandomNumber } from './components/restriction/RandomNumber'
+import { Toast } from './components/templateliterals/Toast'
+import { CustomButton } from './components/html/Button'  
+import { Text } from './components/polymorphic/Text'
 
 
 
@@ -71,6 +73,10 @@ function App() {
       <Counter message='The count value is ' />
       
 
+      {/* <List items={['Scientist', 'Superman', 'Wonderman']}
+            onClick={(items) => console.log(item)} />
+          <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
+
       <List items={[
       { 
         id: 1,
@@ -89,6 +95,21 @@ function App() {
       },
       ]}
       onClick={(item) => console.log(item)} />
+      <RandomNumber value ={8} isPositive />
+      <Toast position='center' />
+      <CustomButton variant='primary' onClick={() => console.log('clicked')}>
+      Primary Button
+      </CustomButton>
+      <Text as='h1' size='lg'>
+      Heading
+      </Text>
+      <Text as='p' size='md'>
+      Paragraph
+      </Text>
+      <Text as='label' htmlFor='someId' size='sm' color='secondary'>
+      Label
+      </Text>
+
   </div>
   )
 }
